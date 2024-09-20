@@ -1,0 +1,52 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="main-page-wrapper">
+    <section class="pt-120 login-register mb-30">
+      <div class="container">
+        <div class="row login-register-cover">
+          <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+            <div class="text-center">
+              <h2 class="mt-10 mb-30 text-brand-1">Login</h2>
+              <!-- <p class="font-sm text-muted mb-30">Access to all features. No credit card required.</p> -->
+              <button class="btn social-login hover-up mb-20" fdprocessedid="wa8zgl"><img src="{% static 'assets/images/icon/icon-google.svg' %}" alt="jobbox" /><strong>Sign in with Google</strong></button>
+              <div class="divider-text-center">
+                <span>Or continue with</span>
+              </div>
+            </div>
+            <form class="login-register text-start mt-20" action="#" method="POST">
+              {% csrf_token %}
+              {% comment %} {% if messages %}
+                <div class="alert alert-danger">
+                  {% for message in messages %}
+                    <div>{{ message }}</div>
+                  {% endfor %}
+                </div>
+              {% endif %} {% endcomment %}
+              <div class="form-group">
+                <label class="form-label" for="input-1">Username or Email address *</label>
+                <input class="form-control" id="input-1" type="text" required="" name="username" placeholder="Steven Job" fdprocessedid="jprts" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="input-4">Password *</label>
+                <input class="form-control" id="input-4" type="password" required="" name="password" placeholder="************" fdprocessedid="c25nja" />
+              </div>
+              <div class="login_footer form-group d-flex justify-content-between">
+                <label class="cb-container"><input type="checkbox" /><span class="text-small">Remenber me</span><span class="checkmark"></span></label><a class="text-muted" href="page-contact.html" previewlistener="true">Forgot Password</a>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-brand-1 hover-up w-100" type="submit" name="login" fdprocessedid="srsypp">Login</button>
+              </div>
+              <div class="text-muted text-center">
+                Don't have an Account? <a href="{% url 'student:sign-up' %}" previewlistener="true">Sign up</a>
+              </div>
+            </form>
+          </div>
+          <!--  <div class="img-1 d-none d-lg-block"><img class="shape-1" src="{% static 'assets/imgs/page/login-register/img-4.svg' %}" alt="JobBox"></div>
+                <div class="img-2"><img src="{% static 'assets/imgs/page/login-register/img-3.svg' %}" alt="JobBox"></div>  -->
+        </div>
+      </div>
+    </section>
+  </div> <!-- /.main-page-wrapper -->
+{% endblock %}
